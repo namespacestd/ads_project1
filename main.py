@@ -6,6 +6,7 @@ import nltk
 import string
 import math
 from collections import Counter
+import operator
 
 def add_document_vectors(documentDictionary1, documentDictionary2):
     word_weights = documentDictionary1
@@ -34,6 +35,7 @@ target_precision = raw_input("Insert Target Precision: ")
 querylist = nltk.word_tokenize(user_query)
 
 while resulting_precision < float(target_precision):
+    resulting_precision = 0.0
     bingUrl = 'https://api.datamarket.azure.com/Bing/Search/Web?Query=%27'
     for query in querylist:
         bingUrl += (query + '%20')
@@ -67,6 +69,8 @@ while resulting_precision < float(target_precision):
     print "========================"
 
     word_counts = []
+    title_tokens = []
+    summary_tokens = []
     not_html_response = 0
 
     for node in root.findall(atom_prefix+'entry'):
@@ -76,11 +80,15 @@ while resulting_precision < float(target_precision):
         entry_node = node.find(atom_prefix+'content').find(microsoft_prefix+'properties')
         URL = entry_node.find(inner_prefix+'Url').text
         print " URL: " + URL
-        print " Title: " + entry_node.find(inner_prefix+'Title').text
-        print " Summary: " + entry_node.find(inner_prefix+'Description').text
+
+        title = entry_node.find(inner_prefix+'Title').text
+        print " Title: " + title
+        summary = entry_node.find(inner_prefix+'Description').text
+        print " Summary: " + summary
         print "]\n"
 
         tokens = []
+        
         try:
             req = urllib2.Request(URL, headers = headers)
             response = urllib2.urlopen(req)
@@ -94,16 +102,22 @@ while resulting_precision < float(target_precision):
             relevancy = False
 
             relevancy = raw_input("Relevant (Y/N)?")
-            if relevancy.lower() == "y":
+            if relevancy.lower() == "y":               
+                title_punc_removed = map(lambda x: x.lower().translate(string.maketrans("",""), string.punctuation), nltk.word_tokenize(title))
+                title_token = filter(lambda s: not str(s).lstrip('-').isdigit(), title_punc_removed)
+                title_tokens = title_tokens + title_token
+
+                summary_punc_removed = map(lambda x: x.lower().translate(string.maketrans("",""), string.punctuation), nltk.word_tokenize(summary))
+                summary_token = filter(lambda s: not str(s).lstrip('-').isdigit(), summary_punc_removed)
+                summary_tokens = summary_tokens + summary_token
+
                 num_relevant+=1
                 relevancy = True
 
             word_counts.append({"document" : counts, "relevancy" : relevancy });
         except:
             print "Removing non-HTML response"
-            not_html_response+=1
-
-    
+            not_html_response+=1    
 
     if num_relevant == 0:
         print "Program Terminating. No relevant results found in top 10."
@@ -122,6 +136,7 @@ while resulting_precision < float(target_precision):
 
     word_document_frequency = {}
 
+#number of documents that a word appears in
     for documents in word_counts:
         for word in documents['document'].keys():
             if word not in word_document_frequency.keys():
@@ -135,29 +150,28 @@ while resulting_precision < float(target_precision):
 
     document_word_weights = []
 
+#Weights of words (and normalization)
     for documents in word_counts:
         word_weights = {}
         normalized_weights = {}
         
-        magnitude = 0
+        sum_of_squares = 0
 
         for word in documents['document'].keys():
             weight = documents['document'][word] * math.log(total_results / word_document_frequency[word])
             word_weights[word] = weight
-            magnitude += math.pow(weight,2)
+            sum_of_squares += math.pow(weight,2)
 
         for word in word_weights.keys():
-            normalized_weight = word_weights[word] / math.sqrt(magnitude)
+            normalized_weight = word_weights[word] / math.sqrt(sum_of_squares)
             normalized_weights[word] = normalized_weight
 
-        document_word_weights.append({'relevancy' : documents['relevancy'], 'weights' : word_weights, 'normalized_weights' : normalized_weights, 'magnitude' : math.sqrt(magnitude)})
-     
-    #for document in document_word_weights:
-    #    print document['normalized_weights']
+        document_word_weights.append({'relevancy' : documents['relevancy'], 'weights' : word_weights, 'normalized_weights' : normalized_weights, 'sum_of_squares' : math.sqrt(sum_of_squares)})
 
     relevant_vectors = {}
     nonrelevant_vectors = {}
 
+#Rocchio Algorithm and add the highest weighted word to query
     for document in document_word_weights:
         if document['relevancy'] == True:
             relevant_vectors = add_document_vectors(relevant_vectors, document['normalized_weights'])
@@ -170,12 +184,50 @@ while resulting_precision < float(target_precision):
         nonrelevant_vectors[word] = nonrelevant_vectors[word] / (total_results - num_relevant)
 
     final_vector_values = subtract_document_vectors(relevant_vectors, nonrelevant_vectors)
+    try:
+        title_tokens = filter(lambda a: a != '', title_tokens)
+    except:
+        pass
+
+    title_counts = Counter(title_tokens)
+    for title in title_counts.keys():
+        try:
+            #final_vector_values[title] *= ((title_counts[title] / num_relevant) * 5)
+            final_vector_values[title] *= (title_counts[title] + 1)
+        except:
+            pass
+
+    summary_counts = Counter(summary_tokens)
+    for summary in summary_counts.keys():
+        try:
+            #final_vector_values[summary] *= ((summary_counts[summary] / num_relevant) * 5)
+            final_vector_values[summary] *= (summary_counts[summary] + 1)
+        except:
+            pass
 
     max_key = max(final_vector_values.iterkeys(), key=(lambda key: final_vector_values[key]))
     print "Adding \"" + max_key + "\" to query."
 
+    '''
     for word in final_vector_values.keys():
         if final_vector_values[word] > 0:
-            print word + " " + str(final_vector_values[word])
+            print word + " " + str(final_vector_values[word])'''
 
     querylist.append(max_key)
+
+    reordered_query_list = []
+    weighted_query_list = {}
+
+    for query in querylist:
+        try:
+            weighted_query_list[query] = final_vector_values[query]
+        except:
+            weighted_query_list[query] = 0
+
+    query_key_values = sorted(weighted_query_list.iteritems(), key=operator.itemgetter(1), reverse=True)
+    
+    for query in query_key_values:
+        reordered_query_list.append(query[0])
+
+    querylist = reordered_query_list
+
