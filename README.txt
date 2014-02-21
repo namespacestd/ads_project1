@@ -31,8 +31,9 @@ make
 
 There are several helper functions included in helper.py for tasks such as formatting query URLs, tokenizing strings, and adding/subtracting vectors.
 
-Most of the program logic is in main.py. First, the program prompts the user for the Bing account key, the initial query, and the target precision@10. The program returns results from Bing and the user marks each one as relevant or non-relevant. The results are stored in word_counts, a dictionary that contains the term counts for the documents and whether the document is relevant or not. From here, several functions are used to organize the approach:
+Most of the program logic is in main.py. First, the program prompts the user for the Bing account key, the initial query, and the target precision@10. The program returns results from Bing and the user marks each one as relevant or non-relevant. The results are stored in word_counts, a dictionary that contains the term counts for the documents and whether the document is relevant or not. NOTE: Several libraries (nltk and yaml) are used to extract the content of the HTML results.
 
+From here, several functions are used to organize the approach:
 - word_document_frequency() takes word_counts as input and returns a dictionary (word_frequency) containing terms and the number of documents the terms appear in.
 - tf_idf_document_weights() takes word_counts and word_frequency as input and returns a dictionary (document_word_weights) containing terms and their normalized weights using the tf-idf weighting scheme.
 - rocchio_algorithm() takes document_word_weights as input (as well as the number of relevant documents and number of total results) and applies the Rocchio Algorithm, returning a vector of potential terms to be added to the query.
