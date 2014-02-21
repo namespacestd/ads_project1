@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 from collections import Counter
 from helper import *
 
-"""Given a list of document (in dictionary form), returns a dictionary that 
+"""Given a list of documents (in dictionary form), returns a dictionary that 
     contains the number of documents words appear in """
 def word_document_frequency(documents):
     word_document_frequency = {}
@@ -24,7 +24,7 @@ def word_document_frequency(documents):
 """Given a dictionary containing the number of documents words appear in, and a list of
     documents (in dictionary form, with their counts), returns a dictionary containing words
     and their corresponding normalized weights."""
-def if_idf_document_weights(word_counts, word_frequency):
+def tf_idf_document_weights(word_counts, word_frequency):
     document_word_weights = []
 
     for documents in word_counts:
@@ -198,7 +198,7 @@ while resulting_precision < float(target_precision):
         print "Still below the desired precision of " + target_precision
 
     word_frequency = word_document_frequency(word_counts)
-    document_word_weights = if_idf_document_weights(word_counts, word_frequency)
+    document_word_weights = tf_idf_document_weights(word_counts, word_frequency)
     final_vector_values = rocchio_algorithm(document_word_weights, num_relevant, total_results)
 
     #Extra weight is added to terms found in the title and summary because they tend to be more important
