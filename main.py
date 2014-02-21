@@ -4,6 +4,8 @@ import xml.etree.ElementTree as ET
 from collections import Counter
 from helper import *
 
+"""Given a list of document (in dictionary form), returns a dictionary that 
+    contains the number of documents words appear in """
 def word_document_frequency(documents):
     word_document_frequency = {}
 
@@ -19,6 +21,9 @@ def word_document_frequency(documents):
                 word_document_frequency[word] = document_frequency
     return word_document_frequency
 
+"""Given a dictionary containing the number of documents words appear in, and a list of
+    documents (in dictionary form, with their counts), returns a dictionary containing words
+    and their corresponding normalized weights."""
 def if_idf_document_weights(word_counts, word_frequency):
     document_word_weights = []
 
@@ -40,6 +45,9 @@ def if_idf_document_weights(word_counts, word_frequency):
         document_word_weights.append({'relevancy' : documents['relevancy'], 'weights' : word_weights, 'normalized_weights' : normalized_weights, 'sum_of_squares' : math.sqrt(sum_of_squares)})
     return document_word_weights
 
+"""Given a dictionary of words and their weights, the total number of relevant documents in the current query, 
+    and the number of valid HTML responses, applies the rocchio algorithm to the document vectors and returns 
+    a dictionary of words and their final weighted value. """
 def rocchio_algorithm(document_word_weights, num_relevant, total_results):
     relevant_vectors = {}
     nonrelevant_vectors = {}
@@ -58,6 +66,7 @@ def rocchio_algorithm(document_word_weights, num_relevant, total_results):
     final_vector_values = subtract_document_vectors(relevant_vectors, nonrelevant_vectors)
     return final_vector_values
 
+"""Given a dictionary of words and their weights, applies a slight "boost" to terms that are deemed "special" """
 def special_term_weights(final_vector_values, special_terms):
     counts = Counter(special_terms)
     for title in counts.keys():
@@ -67,6 +76,7 @@ def special_term_weights(final_vector_values, special_terms):
             pass
     return final_vector_values
 
+"""Given a querylist, reorders it so that the highest weighted words appear first"""
 def reorder_query_list(querylist, final_vector_values):
     reordered_query_list = []
     weighted_query_list = {}
@@ -84,18 +94,21 @@ def reorder_query_list(querylist, final_vector_values):
 
     return reordered_query_list
 
+#XML RESPONSE CONSTANTS
 atom_prefix = '{http://www.w3.org/2005/Atom}'
 microsoft_prefix = '{http://schemas.microsoft.com/ado/2007/08/dataservices/metadata}'
 inner_prefix = '{http://schemas.microsoft.com/ado/2007/08/dataservices}'
 accountKey = 'xQsuyV9c3sG/oW9e5FTBmfm/YrTq6uXXmtNV+k5Mmxs'
-  
+
+#PROGRAM INITIAL INPUTS
 accountKey = raw_input("Enter Bing Account Key: ")
 user_query = raw_input("Insert Target Query: ")
-resulting_precision = 0.0
 target_precision = raw_input("Insert Target Precision@10: ")
 
+resulting_precision = 0.0
 querylist = nltk.word_tokenize(user_query)
 
+#WHILE TARGET PRECISION NOT REACHED, CONTINUE APPLYING ALGORITHM
 while resulting_precision < float(target_precision):
     resulting_precision = 0.0
     
@@ -106,6 +119,7 @@ while resulting_precision < float(target_precision):
     response = urllib2.urlopen(req)
     content = response.read()
 
+    #XML as a Python Element object
     root = ET.fromstring(content)  
 
     url = root[5].attrib['href']
@@ -187,6 +201,7 @@ while resulting_precision < float(target_precision):
     document_word_weights = if_idf_document_weights(word_counts, word_frequency)
     final_vector_values = rocchio_algorithm(document_word_weights, num_relevant, total_results)
 
+    #Extra weight is added to terms found in the title and summary because they tend to be more important
     final_vector_values = special_term_weights(final_vector_values, title_tokens)
     final_vector_values = special_term_weights(final_vector_values, summary_tokens)
 
