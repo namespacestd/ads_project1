@@ -17,6 +17,14 @@ nltk (library), yaml (library)
 make
 
     After running make, the program will ask for a series of three inputs: Bing Account Key, target query, and target precision@10.
+
+    Sample Run:
+
+    $ make
+    Enter Bing Account Key: xQsuyV9c3sG/oW9e5FTBmfm/YrTq6uXXmtNV+k5Mmxs
+    Insert Target Query: snow leopard
+    Insert Target Precision@10: .9
+    
 ===================
 | Internal Design |
 ===================
