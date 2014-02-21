@@ -19,7 +19,7 @@ def word_document_frequency(documents):
                 word_document_frequency[word] = document_frequency
     return word_document_frequency
 
-def if_idf_document_weights(word_counts):
+def if_idf_document_weights(word_counts, word_frequency):
     document_word_weights = []
 
     for documents in word_counts:
@@ -29,7 +29,7 @@ def if_idf_document_weights(word_counts):
         sum_of_squares = 0
 
         for word in documents['document'].keys():
-            weight = documents['document'][word] * math.log(total_results / word_document_frequency[word])
+            weight = documents['document'][word] * math.log(total_results / word_frequency[word])
             word_weights[word] = weight
             sum_of_squares += math.pow(weight,2)
 
@@ -146,35 +146,32 @@ while resulting_precision < float(target_precision):
         tokens = []
         
         try:
+            relevancy = False
+
+            relevancy = raw_input("Relevant (Y/N)? ")
+            if relevancy.lower() == "y":
+                num_relevant+=1
+                title_tokens = title_tokens + tokenize_and_clean(title)
+                summary_tokens = summary_tokens + tokenize_and_clean(summary)                
+                relevancy = True
+
             req = urllib2.Request(URL, headers = headers)
             response = urllib2.urlopen(req)
             content = response.read()
             raw = nltk.clean_html(content)
             tokens = tokenize_and_clean(raw)
-
             counts = Counter(tokens)
-
-            relevancy = False
-
-            relevancy = raw_input("Relevant (Y/N)? ")
-            if relevancy.lower() == "y":               
-                title_tokens = title_tokens + tokenize_and_clean(title)
-                summary_tokens = summary_tokens + tokenize_and_clean(summary)
-
-                num_relevant+=1
-                relevancy = True
 
             word_counts.append({"document" : counts, "relevancy" : relevancy });
         except:
-            print "Unable to parse retrieved document. Possibly a non-HTML response. Skipping document."
             not_html_response+=1    
 
     if num_relevant == 0:
         print "Program Terminating. No relevant results found in top 10."
         break
 
-    total_results-=not_html_response
     resulting_precision = num_relevant / total_results
+    total_results-=not_html_response
     print "======================"
     print "FEEDBACK SUMMARY"
     print "Query: " + str(querylist)
@@ -186,8 +183,8 @@ while resulting_precision < float(target_precision):
     else:
         print "Still below the desired precision of " + target_precision
 
-    word_document_frequency = word_document_frequency(word_counts)
-    document_word_weights = if_idf_document_weights(word_counts)
+    word_frequency = word_document_frequency(word_counts)
+    document_word_weights = if_idf_document_weights(word_counts, word_frequency)
     final_vector_values = rocchio_algorithm(document_word_weights, num_relevant, total_results)
 
     final_vector_values = special_term_weights(final_vector_values, title_tokens)

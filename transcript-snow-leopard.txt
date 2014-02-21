@@ -1,0 +1,194 @@
+$ make
+python main.py
+Enter Bing Account Key: xQsuyV9c3sG/oW9e5FTBmfm/YrTq6uXXmtNV+k5Mmxs
+Insert Target Query: snow leopard
+Insert Target Precision@10: .9
+
+Parameters:
+Client Key: xQsuyV9c3sG/oW9e5FTBmfm/YrTq6uXXmtNV+k5Mmxs
+Query: ['snow', 'leopard']
+Precision: .9
+URL: https://api.datamarket.azure.com/Bing/Search/Web?Query=%27snow%20leopard%27&$top=10&$format=Atom
+Total Results: 10
+Bing Search Results:
+======================
+Result 1
+[
+ URL: http://en.wikipedia.org/wiki/Snow_Leopard
+ Title: Snow leopard - Wikipedia, the free encyclopedia
+ Summary: Snow leopards are slightly smaller than the other big cats but, like them, exhibit a range of sizes, generally weighing between 27 and 55 kg (60 and 121 lb), with an ...
+]
+
+Relevant (Y/N)? n
+Result 2
+[
+ URL: http://animals.nationalgeographic.com/animals/mammals/snow-leopard/
+ Title: Snow Leopards, Snow Leopard Pictures, Snow Leopard Facts ...
+ Summary: Learn all you wanted to know about snow leopards with pictures, videos, photos, facts, and news from National Geographic.
+]
+
+Relevant (Y/N)? n
+Result 3
+[
+ URL: http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard
+ Title: Mac OS X 10.6 Snow Leopard - Apple Store (U.S.)
+ Summary: If you need to purchase Mac OS X 10.6 Snow Leopard, you may order it from this page. The most current version of OS X is OS X 10.9 Mavericks.
+]
+
+Relevant (Y/N)? y
+Result 4
+[
+ URL: http://www.defenders.org/snow-leopard/basic-facts
+ Title: Snow Leopard | Basic Facts About Snow Leopards | Defenders ...
+ Summary: Learn about the size, diet, population, range, behavior and other fascinating facts about snow leopards.
+]
+
+Relevant (Y/N)? n
+Result 5
+[
+ URL: http://worldwildlife.org/species/snow-leopard
+ Title: Snow Leopard | Species | WWF - World Wildlife Fund
+ Summary: The snow leopard’s powerful build allows it to scale great steep slopes with ease. Its hind legs give the snow leopard the ability to leap six times the length of ...
+]
+
+Relevant (Y/N)? n
+Result 6
+[
+ URL: http://animals.sandiegozoo.org/animals/snow-leopard
+ Title: Snow Leopard | San Diego Zoo Animals
+ Summary: So how do snow leopards live at high altitudes? They keep mainly to cliffs and rocky slopes, below the permanent snow line. Snow leopards have a relatively small head ...
+]
+
+Relevant (Y/N)? n
+Result 7
+[
+ URL: http://www.apple.com/support/snowleopard/
+ Title: Apple - Support - Snow Leopard
+ Summary: Get help with installing and using Snow Leopard, setting up email accounts, connecting to the Internet, troubleshooting, and much more.
+]
+
+Relevant (Y/N)? y
+Result 8
+[
+ URL: http://www.snowleopard.org/
+ Title: Snow Leopard Trust | Saving Snow Leopards
+ Summary: Located in Seattle, they work to protect the endangered snow leopard and its Central Asian habitat.
+]
+
+Relevant (Y/N)? n
+Result 9
+[
+ URL: http://www.apple.com/osx/
+ Title: OS X - Official Site
+ Summary: The new OS X is loaded with new features, apps, and technologies that give you the power to do more. And make your Mac even more energy-efficient.
+]
+
+Relevant (Y/N)? y
+Result 10
+[
+ URL: http://www.amazon.com/s?ie=UTF8&page=1&rh=i%3Aaps%2Ck%3Asnow%20leopard
+ Title: Amazon.com: snow leopard
+ Summary: Mac OS X Server v10.6.3 Snow Leopard - Unlimited Client License by Apple Mac OS X 10.6 "Snow Leopard" Server Unlimited MC190Z/A (DVD-ROM) - Mac OS X Intel
+]
+
+Relevant (Y/N)? y
+======================
+FEEDBACK SUMMARY
+Query: ['snow', 'leopard']
+Precision: 0.4
+Still below the desired precision of .9
+Augmenting current querylist with "os"
+
+Parameters:
+Client Key: xQsuyV9c3sG/oW9e5FTBmfm/YrTq6uXXmtNV+k5Mmxs
+Query: ['os', 'leopard', 'snow']
+Precision: .9
+URL: https://api.datamarket.azure.com/Bing/Search/Web?Query=%27os%20leopard%20snow%27&$top=10&$format=Atom
+Total Results: 10
+Bing Search Results:
+======================
+Result 1
+[
+ URL: http://en.wikipedia.org/wiki/Mac_OS_X_Snow_Leopard
+ Title: Mac OS X Snow Leopard - Wikipedia, the free encyclopedia
+ Summary: Mac OS X Snow Leopard (version 10.6) is the seventh major release of Mac OS X, Apple's desktop and server operating system for Macintosh computers.
+]
+
+Relevant (Y/N)? y
+Result 2
+[
+ URL: http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard
+ Title: Mac OS X 10.6 Snow Leopard - Apple Store (U.S.)
+ Summary: If you need to purchase Mac OS X 10.6 Snow Leopard, you may order it from this page. The most current version of OS X is OS X 10.9 Mavericks.
+]
+
+Relevant (Y/N)? y
+Result 3
+[
+ URL: http://www.apple.com/support/snowleopard/
+ Title: Apple - Support - Snow Leopard
+ Summary: Get help with installing and using Snow Leopard, setting up email accounts, connecting to the Internet, troubleshooting, and much more.
+]
+
+Relevant (Y/N)? y
+Result 4
+[
+ URL: http://www.scotzine.com/wp-trak.php?id=mac-os-x-10-6-download-apple
+ Title: Mac os x 10.6 download apple - Apple Mac OS X 10.6 Snow ...
+ Summary: Its easy to produce visually compelling documents more efficiently, efficiently and stay up to Buy online os leopard 10.6 mac information in Cheap 10.6 apple leopard ...
+]
+
+Relevant (Y/N)? y
+Result 5
+[
+ URL: http://www.apple.com/osx/
+ Title: OS X - Official Site
+ Summary: The new OS X is loaded with new features, apps, and technologies that give you the power to do more. And make your Mac even more energy-efficient.
+]
+
+Relevant (Y/N)? y
+Result 6
+[
+ URL: http://download.cnet.com/Apple-Mac-OS-X-Snow-Leopard/3000-18513_4-90306.html
+ Title: Apple Mac OS X Snow Leopard for Mac - Free download and ...
+ Summary: Sneaking in a few days before its promised September release, the tune-up for Mac OS X Leopard costs $29 for current Leopard users, and packs just enough ...
+]
+
+Relevant (Y/N)? y
+Result 7
+[
+ URL: http://www.amazon.com/version-Leopard-computer-processor-required/dp/B001AMHWP8
+ Title: Amazon.com: Mac OS X version 10.6.3 Snow Leopard (Mac ...
+ Summary: Mac OS X Snow Leopard is an even more powerful and refined version of the world’s most advanced operating system. In ways big and small, it gets faster, more ...
+]
+
+Relevant (Y/N)? y
+Result 8
+[
+ URL: http://en.wikipedia.org/wiki/Mac_OS_X_Leopard
+ Title: Mac OS X Leopard - Wikipedia, the free encyclopedia
+ Summary: Mac OS X Leopard (version 10.5) is the sixth major release of Mac OS X, Apple's desktop and server operating system for Macintosh computers. Leopard was released on ...
+]
+
+Relevant (Y/N)? y
+Result 9
+[
+ URL: http://www.ebay.com/sch/i.html?_nkw=mac+os+snow+leopard
+ Title: mac os snow leopard | eBay - Electronics, Cars, Fashion ...
+ Summary: Find great deals on eBay for mac os snow leopard and mac osx snow leopard. Shop with confidence.
+]
+
+Relevant (Y/N)? y
+Result 10
+[
+ URL: http://osxdaily.com/2014/02/18/still-running-old-os-x-upgrade-to-mavericks/
+ Title: Is Your Mac Still Running OS X Lion? Why? You Should ...
+ Summary: OS X Snow Leopard – great, very stable, most reliable OS Apple has made, no complaints, but outdated and increasingly missing new, useful, ...
+]
+
+Relevant (Y/N)? y
+======================
+FEEDBACK SUMMARY
+Query: ['os', 'leopard', 'snow']
+Precision: 1.0
+Desired precision reached. Program ending.

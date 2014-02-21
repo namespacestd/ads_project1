@@ -12,15 +12,21 @@ def bing_URL_from_querylist(querylist):
     return bingURL
 
 def tokenize_and_clean(raw):
-    tokens = map(lambda x: x.lower().translate(string.maketrans("",""), string.punctuation), nltk.word_tokenize(raw))
-    tokens = filter(lambda s: not str(s).lstrip('-').isdigit(), tokens)
-
     try:
-        tokens = filter(lambda a: a != '', tokens)
+        tokens = map(lambda x: x.lower().translate(string.maketrans("",""), string.punctuation), nltk.word_tokenize(raw))
+        tokens = filter(lambda s: not str(s).lstrip('-').isdigit(), tokens)
+
+        try:
+            tokens = filter(lambda a: a != '', tokens)
+        except:
+            pass
+
+        return tokens
     except:
         pass
 
-    return tokens
+    return raw
+    
 
 def add_document_vectors(documentDictionary1, documentDictionary2):
     word_weights = documentDictionary1

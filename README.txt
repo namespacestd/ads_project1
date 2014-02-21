@@ -7,14 +7,16 @@ Project 1
 | Files Submitted |
 ===================
 
-Placeholder
+main.py, helper.py, Makefile, README.txt, transcript-snow-leopard.txt, transcript-gates.txt, transcript-columbia.txt
+nltk (library), yaml (library)
 
 ==============
 | How to Run |
 ==============
 
-Placeholder
+make
 
+    After running make, the program will ask for a series of three inputs: Bing Account Key, target query, and target precision@10.
 ===================
 | Internal Design |
 ===================

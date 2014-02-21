@@ -1,0 +1,194 @@
+$ make
+python main.py
+Enter Bing Account Key: xQsuyV9c3sG/oW9e5FTBmfm/YrTq6uXXmtNV+k5Mmxs
+Insert Target Query: gates
+Insert Target Precision@10: .9
+
+Parameters:
+Client Key: xQsuyV9c3sG/oW9e5FTBmfm/YrTq6uXXmtNV+k5Mmxs
+Query: ['gates']
+Precision: .9
+URL: https://api.datamarket.azure.com/Bing/Search/Web?Query=%27gates%27&$top=10&$format=Atom
+Total Results: 10
+Bing Search Results:
+======================
+Result 1
+[
+ URL: http://gates.com/
+ Title: Gates - Powering Progress™ in belts, hose & hydraulics
+ Summary: Gates Corporation is Powering Progress™ in the Oil & Gas, Energy, Mining, Marine, Agriculture, Transportation and Automotive Industries.
+]
+
+Relevant (Y/N)? n
+Result 2
+[
+ URL: http://www.gatecrafters.com/design_your_gates.aspx
+ Title: Driveway Gates | Automatic Gates | Electric Gates
+ Summary: Driveway Gates - Automatic Gates The high-quality driveway gates from GateCrafters.com come in a wide variety of options to ...
+]
+
+Relevant (Y/N)? n
+Result 3
+[
+ URL: http://www.gates.com/automotive.cfm
+ Title: Automotive | Gates Corporation
+ Summary: Gates offers the most complete line of original equipment products, including automotive hoses, belts & accessories for the automotive aftermarket.
+]
+
+Relevant (Y/N)? n
+Result 4
+[
+ URL: http://www.amazon.com/s?ie=UTF8&page=1&rh=i%3Aaps%2Ck%3Agates
+ Title: Amazon.com: gates
+ Summary: In stock but may require an extra 1-2 days to process. FREE Shipping on orders over $35
+]
+
+Relevant (Y/N)? n
+Result 5
+[
+ URL: http://www.toysrus.com/category/index.jsp?categoryId=3243470
+ Title: Safety Gates - Health & Safety - Babies "R" Us
+ Summary: Safety gates available at Babies'R'Us with the best prices and top selections! Shop now for quality, safe and durable baby safety gates and accessories!
+]
+
+Relevant (Y/N)? n
+Result 6
+[
+ URL: http://en.wikipedia.org/wiki/Bill_Gates
+ Title: Bill Gates - Wikipedia, the free encyclopedia
+ Summary: William Henry "Bill" Gates III (born October 28, 1955) is an American business magnate, investor, programmer, inventor and philanthropist. Gates is the ...
+]
+
+Relevant (Y/N)? y
+Result 7
+[
+ URL: http://dictionary.reference.com/browse/gates
+ Title: Gates | Define Gates at Dictionary.com
+ Summary: gate 1 (ɡeɪt) —n: 1. a movable barrier, usually hinged, for closing an opening in a wall, fence, etc: 2. an opening to allow passage into or out of an enclosed place
+]
+
+Relevant (Y/N)? n
+Result 8
+[
+ URL: http://en.wikipedia.org/wiki/Gate
+ Title: Gate - Wikipedia, the free encyclopedia
+ Summary: Types . Types of gates include: Baby gate; City gate; Hampshire gate; Kissing gate; Lych gate; Mon (architecture), Japanese gates of many varieties including the Torii
+]
+
+Relevant (Y/N)? n
+Result 9
+[
+ URL: http://www.toysrus.com/family/index.jsp?categoryId=2256222
+ Title: Baby Gates - Babies"R"Us - Toysrus
+ Summary: Safe & durable baby gates will keep your baby safe. Choose from a large assortment of baby gates including extra wide gates to suit your needs. Shop today.
+]
+
+Relevant (Y/N)? n
+Result 10
+[
+ URL: http://www.townofgates.org/
+ Title: Town of Gates - A Community For All People
+ Summary: Gates, New York is a dynamic town in Monroe County with an interesting past and a bright future. The town was incorporated in 1813 and was the last remnants of ...
+]
+
+Relevant (Y/N)? n
+======================
+FEEDBACK SUMMARY
+Query: ['gates']
+Precision: 0.1
+Still below the desired precision of .9
+Augmenting current querylist with "bill"
+
+Parameters:
+Client Key: xQsuyV9c3sG/oW9e5FTBmfm/YrTq6uXXmtNV+k5Mmxs
+Query: ['bill', 'gates']
+Precision: .9
+URL: https://api.datamarket.azure.com/Bing/Search/Web?Query=%27bill%20gates%27&$top=10&$format=Atom
+Total Results: 10
+Bing Search Results:
+======================
+Result 1
+[
+ URL: http://www.thegatesnotes.com/
+ Title: Bill Gates - Official Site
+ Summary: The debate over education in the United States is getting clouded by myths—especially myths about the academic standards known as Common Core.
+]
+
+Relevant (Y/N)? y
+Result 2
+[
+ URL: http://en.wikipedia.org/wiki/Bill_Gates
+ Title: Bill Gates - Wikipedia, the free encyclopedia
+ Summary: William Henry "Bill" Gates III (born October 28, 1955) is an American business magnate, investor, programmer, inventor and philanthropist. Gates is the ...
+]
+
+Relevant (Y/N)? y
+Result 3
+[
+ URL: http://www.biography.com/people/bill-gates-9307520
+ Title: Bill Gates Biography - Facts, Birthday, Life Story ...
+ Summary: Biography.com tracks the life and career of Bill Gates, from his early interest in computer programming to his place as founder of Microsoft, the world's largest ...
+]
+
+Relevant (Y/N)? y
+Result 4
+[
+ URL: http://www.microsoft.com/en-us/news/exec/billg/
+ Title: Bill Gates: Founder and Technology Advisor
+ Summary: Updated: Feb. 4, 2014. William (Bill) H. Gates is founder, technology advisor and board member of Microsoft Corporation, the worldwide leader in software ...
+]
+
+Relevant (Y/N)? y
+Result 5
+[
+ URL: http://www.gatesfoundation.org/
+ Title: Bill & Melinda Gates Foundation - Official Site
+ Summary: About the Foundation. Guided by the belief that every life has equal value, the Bill and Melinda Gates Foundation aspires to help all people lead healthy ...
+]
+
+Relevant (Y/N)? y
+Result 6
+[
+ URL: http://www.forbes.com/profile/bill-gates/
+ Title: Bill Gates - Forbes - Information for the World's Business ...
+ Summary: Bill Gates is the wealthiest man in the U.S. (and the world, for that matter), despite past gifts of more than $28 billion to the Bill & Melinda Gates Foundation.
+]
+
+Relevant (Y/N)? y
+Result 7
+[
+ URL: http://www.imdb.com/name/nm0309540/
+ Title: Bill Gates - IMDb
+ Summary: Bill Gates, Self: Freakonomics. Born William Henry III is an American entrepreneur, business mogul, investor, philanthropist, and widely known as one of the most ...
+]
+
+Relevant (Y/N)? y
+Result 8
+[
+ URL: http://www.huffingtonpost.com/news/bill-gates/
+ Title: Bill Gates: Pictures, Videos, Breaking News
+ Summary: Big News on Bill Gates. Includes blogs, news, and community conversations about Bill Gates.
+]
+
+Relevant (Y/N)? y
+Result 9
+[
+ URL: http://topics.nytimes.com/top/reference/timestopics/people/g/bill_gates/index.html
+ Title: Bill Gates News - The New York Times
+ Summary: News about Bill Gates. Commentary and archival information about Bill Gates from The New York Times.
+]
+
+Relevant (Y/N)? y
+Result 10
+[
+ URL: http://topics.wsj.com/person/g/bill-gates/685
+ Title: Bill Gates - News, Articles, Biography, Photos - WSJ.com
+ Summary: Chairman and founder, Microsoft Corp. William "Bill" H. Gates is chairman of Microsoft Corp. Subscriber Content Read Preview The Daily Docket: Bill Gates Controlled ...
+]
+
+Relevant (Y/N)? y
+======================
+FEEDBACK SUMMARY
+Query: ['bill', 'gates']
+Precision: 1.0
+Desired precision reached. Program ending.

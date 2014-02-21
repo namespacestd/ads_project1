@@ -1,0 +1,289 @@
+$ make
+python main.py
+Enter Bing Account Key: xQsuyV9c3sG/oW9e5FTBmfm/YrTq6uXXmtNV+k5Mmxs
+Insert Target Query: columbia
+Insert Target Precision@10: .9
+
+Parameters:
+Client Key: xQsuyV9c3sG/oW9e5FTBmfm/YrTq6uXXmtNV+k5Mmxs
+Query: ['columbia']
+Precision: .9
+URL: https://api.datamarket.azure.com/Bing/Search/Web?Query=%27columbia%27&$top=10&$format=Atom
+Total Results: 10
+Bing Search Results:
+======================
+Result 1
+[
+ URL: http://www.columbia.com/
+ Title: Columbia Sportswear - Official Site
+ Summary: Shop direct from Columbia Sportswear. Buy Columbia jackets, pants, shirts, fleece, shoes, boots & sweaters. Visit our blog, watch videos & meet our athletes.
+]
+
+Relevant (Y/N)? n
+Result 2
+[
+ URL: http://www.columbia.edu/
+ Title: Columbia University - Official Site
+ Summary: Founded in 1754 as King's College by royal charter, it is the oldest institution of higher learning in the State of New York. Located in New York City and a member of ...
+]
+
+Relevant (Y/N)? y
+Result 3
+[
+ URL: http://en.wikipedia.org/wiki/Columbia_(name)
+ Title: Columbia (name) - Wikipedia, the free encyclopedia
+ Summary: Columbia is a historical and poetic name used for the United States of America and is also the name of its female personification. It has inspired the names of many ...
+]
+
+Relevant (Y/N)? n
+Result 4
+[
+ URL: http://columbiasc.net/
+ Title: :: Welcome to the City of Columbia ::
+ Summary: The Columbia City Hall, also known as Old United States Court House and Post Office, was built in 1870.It was listed on the National Register of Historic Places in 1973.
+]
+
+Relevant (Y/N)? n
+Result 5
+[
+ URL: http://www.columbia.com/on/demandware.store/Sites-Columbia_US-Site/default/Home-SelectCountry
+ Title: Columbia Sportswear | International > Select a Country
+ Summary: Welcome to the Greater Outdoors. Experience the Columbia Sportswear website specific to your country and language. Learn more about our products and find out where to ...
+]
+
+Relevant (Y/N)? n
+Result 6
+[
+ URL: http://www.gocolumbiamo.com/
+ Title: Columbia, Missouri - Official Site
+ Summary: The City of Columbia Missouri's official web site. Perform business transactions, view services, department information, upcoming meetings and events.
+]
+
+Relevant (Y/N)? n
+Result 7
+[
+ URL: http://www8.gsb.columbia.edu/
+ Title: Home | Columbia Business School
+ Summary: Columbia Business School brings a global perspective, cutting-edge methodology, and the energy of New York City to its MBA, EMBA, Executive Education, PhD, and MS ...
+]
+
+Relevant (Y/N)? y
+Result 8
+[
+ URL: http://en.wikipedia.org/wiki/Columbia_university
+ Title: Columbia University - Wikipedia, the free encyclopedia
+ Summary: Columbia University in the City of New York, commonly referred to as Columbia University, is an American private Ivy League research university located in ...
+]
+
+Relevant (Y/N)? y
+Result 9
+[
+ URL: http://www.visitcolumbiacalifornia.com/
+ Title: Columbia, California | Historic Gold Rush Town
+ Summary: Come discover Columbia and explore the rich history of this charming California Gold Rush town located in the heart of the Mother Lode off of highway 49.
+]
+
+Relevant (Y/N)? n
+Result 10
+[
+ URL: http://new.sipa.columbia.edu/
+ Title: Columbia | SIPA | School of International and Public Affairs
+ Summary: Columbia SIPA is the world’s most global public policy school. SIPA offers MPA, MIA and PhD degrees focused on the skills and knowledge needed to solve the most ...
+]
+
+Relevant (Y/N)? y
+======================
+FEEDBACK SUMMARY
+Query: ['columbia']
+Precision: 0.4
+Still below the desired precision of .9
+Augmenting current querylist with "university"
+
+Parameters:
+Client Key: xQsuyV9c3sG/oW9e5FTBmfm/YrTq6uXXmtNV+k5Mmxs
+Query: ['university', 'columbia']
+Precision: .9
+URL: https://api.datamarket.azure.com/Bing/Search/Web?Query=%27university%20columbia%27&$top=10&$format=Atom
+Total Results: 10
+Bing Search Results:
+======================
+Result 1
+[
+ URL: http://www.columbia.edu/
+ Title: Columbia University - Official Site
+ Summary: Founded in 1754 as King's College by royal charter, it is the oldest institution of higher learning in the State of New York. Located in New York City and a member of ...
+]
+
+Relevant (Y/N)? y
+Result 2
+[
+ URL: http://en.wikipedia.org/wiki/Columbia_university
+ Title: Columbia University - Wikipedia, the free encyclopedia
+ Summary: Columbia University in the City of New York, commonly referred to as Columbia University, is an American private Ivy League research university located in the ...
+]
+
+Relevant (Y/N)? y
+Result 3
+[
+ URL: http://www.college.columbia.edu/
+ Title: Columbia College, Columbia University - Official Site
+ Summary: Columbia College’s Phi Beta Kappa chapter welcomed 22 new members as Junior Phi Beta Kappa members on January 31.
+]
+
+Relevant (Y/N)? y
+Result 4
+[
+ URL: http://www.sc.edu/
+ Title: University of South Carolina - Official Site
+ Summary: Public university located in Columbia offering degrees from associate to doctoral in many different fields including medicine and law.
+]
+
+Relevant (Y/N)? n
+Result 5
+[
+ URL: http://missouri.edu/
+ Title: University of Missouri - Official Site
+ Summary: The University of Missouri was founded Feb. 11, 1839. ... University of Missouri. Columbia, MO 65211, 573-882-2121. Mizzou Social Media. Emergency Info rmation.
+]
+
+Relevant (Y/N)? n
+Result 6
+[
+ URL: http://engineering.columbia.edu/chips-listen-bacteria-0
+ Title: Columbia University
+ Summary: In a study published today in Nature Communications, a research team led by Ken Shepard, professor of electrical engineering and biomedical engineering at Columbia ...
+]
+
+Relevant (Y/N)? y
+Result 7
+[
+ URL: http://colleges.usnews.rankingsandreviews.com/best-colleges/columbia-university-2707
+ Title: Columbia University | Best College | US News
+ Summary: Is Columbia University the best college for you? Find out at US News. See if Columbia University is ranked and get info on admission, tuition, student life, and more.
+]
+
+Relevant (Y/N)? y
+Result 8
+[
+ URL: http://www.ccis.edu/
+ Title: Columbia College - Official Site
+ Summary: Columbia College Columbia College, providing adult education, distance learning, online degrees and education at more than 30 campuses across the country. Get an ...
+]
+
+Relevant (Y/N)? y
+Result 9
+[
+ URL: http://arts.columbia.edu/columbia-university
+ Title: Columbia University | Columbia University School of the Arts
+ Summary: From a one-room classroom with one professor and eight students, Columbia University has grown to include more than 4,000 faculty members and 23,000 students.
+]
+
+Relevant (Y/N)? y
+Result 10
+[
+ URL: http://news.columbia.edu/columbia-ink-14
+ Title: On Campus | Columbia News
+ Summary: Harvard University Press In Democracy Disfigured, Urbinati, the Kyriakos Tsakopoulos Professor of Political Theory and Hellenic Studies in the Department of Political ...
+]
+
+Relevant (Y/N)? y
+======================
+FEEDBACK SUMMARY
+Query: ['university', 'columbia']
+Precision: 0.8
+Still below the desired precision of .9
+Augmenting current querylist with "best"
+
+Parameters:
+Client Key: xQsuyV9c3sG/oW9e5FTBmfm/YrTq6uXXmtNV+k5Mmxs
+Query: ['best', 'university', 'columbia']
+Precision: .9
+URL: https://api.datamarket.azure.com/Bing/Search/Web?Query=%27best%20university%20columbia%27&$top=10&$format=Atom
+Total Results: 10
+Bing Search Results:
+======================
+Result 1
+[
+ URL: http://colleges.usnews.rankingsandreviews.com/best-colleges/columbia-university-2707
+ Title: Columbia University | Best College | US News
+ Summary: Is Columbia University the best college for you? Find out at US News. See if Columbia University is ranked and get info on admission, tuition, student life, and more.
+]
+
+Relevant (Y/N)? y
+Result 2
+[
+ URL: http://www.topuniversities.com/universities/columbia-university/undergrad
+ Title: Columbia University | Top Universities
+ Summary: Is the Columbia University undergraduate program right for you? Read the Top Universities profile.
+]
+
+Relevant (Y/N)? y
+Result 3
+[
+ URL: http://colleges.usnews.rankingsandreviews.com/best-colleges/columbia-university-2707/rankings
+ Title: Columbia University | Rankings | Best College | US News
+ Summary: Find out where Columbia University ranks at US News Best Colleges. See why Columbia University is one of the best schools in the country.
+]
+
+Relevant (Y/N)? y
+Result 4
+[
+ URL: http://thenewcivilrightsmovement.com/top-university-study-anti-gay-prejudice-is-killing-gay-people/discrimination/2014/02/17/83300
+ Title: Top University Study: Anti-Gay Prejudice Is Killing Gay ...
+ Summary: A study just released by Columbia University’s Mailman School of Public Health finds that gay people living in communities entrenched with high levels of ...
+]
+
+Relevant (Y/N)? y
+Result 5
+[
+ URL: http://www.columbia.edu/
+ Title: Columbia University - Official Site
+ Summary: Columbia University in the City of New York. http://www.columbia.edu/content/about-columbia.html. Winter on Morningside Campus ABOUT COLUMBIA.
+]
+
+Relevant (Y/N)? y
+Result 6
+[
+ URL: http://www.forbes.com/colleges/columbia-university-in-the-city-of-new-york/
+ Title: Columbia University - Forbes - Information for the World's ...
+ Summary: Profile. Columbia University was founded in 1754 as King’s College, and it is the oldest institution of higher learning in New York state and the fifth oldest in ...
+]
+
+Relevant (Y/N)? y
+Result 7
+[
+ URL: http://www.forbes.com/lists/2008/94/opinions_college08_Columbia-University_94101.html
+ Title: America's Best Colleges: #10 Columbia University - Forbes.com
+ Summary: "Columbia offers an education in a great American research university but also offers an education in and of New York City."
+]
+
+Relevant (Y/N)? y
+Result 8
+[
+ URL: http://www.thebestcolleges.org/schools/new-york/columbia-university/
+ Title: Columbia University - The Best Colleges - School Rankings ...
+ Summary: Founded in 1754, Columbia University is the oldest higher education institution in the state of New York. Though Columbia had a humble beginning, it expanded rapidly ...
+]
+
+Relevant (Y/N)? y
+Result 9
+[
+ URL: http://en.wikipedia.org/wiki/University_of_British_Columbia
+ Title: University of British Columbia - Wikipedia, the free ...
+ Summary: The University of British Columbia (commonly referred to as UBC) is a public research university in British Columbia, Canada. Founded in 1908 as the McGill ...
+]
+
+Relevant (Y/N)? n
+Result 10
+[
+ URL: http://grad-schools.usnews.rankingsandreviews.com/best-graduate-schools/top-medical-schools/columbia-university-04070
+ Title: Columbia University | Best Medical School | US News
+ Summary: Is Columbia University the best medical school for you? Find out at US News. See if Columbia University is ranked and get info on programs, admission, tuition, and more.
+]
+
+Relevant (Y/N)? y
+======================
+FEEDBACK SUMMARY
+Query: ['best', 'university', 'columbia']
+Precision: 0.9
+Desired precision reached. Program ending.
